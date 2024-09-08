@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continental University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-Q8izPIyW9zTYSbSbqrOl8sSObujWJYz5JYj+HFrKf/xaUauz5WyRTXPzAGWKgJSPluuC/01aE9WjbiOOflogw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      background-image: url("images/engineering college (2).jpg");
+      background-size: 100vw 100vh;
+      background-position: center;
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
+
+    .cta1 {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    /* Course Section Styles */
+    .course {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .course h1 {
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .course p {
+      color: #777;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+      padding: 10px;
+    }
+
+    .row {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .course-col {
+      flex-basis: 31%;
+      background: #fff3f3;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+
+    .course-col h3 {
+      text-align: center;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .course-col:hover {
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Campus Section Styles */
+    .campus {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .campus-col {
+      flex-basis: 32%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .campus-col img {
+      width: 100%;
+    }
+
+    .layer {
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    .layer:hover {
+      background: rgba(226, 0, 0, 0.7);
+    }
+
+    .layer h3 {
+      width: 100%;
+      font-weight: 500;
+      color: #fff;
+      font-size: 26px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .layer:hover h3 {
+      bottom: 49%;
+      opacity: 1;
+    }
+
+    /* Facilities Section Styles */
+    .facilities {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .facilities-col {
+      flex-basis: 31%;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+    }
+
+    .facilities-col img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .facilities-col p {
+      padding: 0;
+    }
+
+    .facilities-col h3 {
+      margin-top: 16px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    /* Testimonials Section Styles */
+    .testimonials {
+      width: 80%;
+      margin: auto;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .testimonials-col {
+      flex-basis: 44%;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+      background: #fff3f3;
+      padding: 25px;
+      cursor: pointer;
+      display: flex;
+    }
+
+    .testimonials-col img {
+      height: 40px;
+      margin-left: 5px;
+      margin-right: 30px;
+      border-radius: 50%;
+    }
+
+    .testimonials-col p {
+      padding: 0;
+    }
+
+    .testimonials-col h3 {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .testimonials-col .fa {
+      color: #f44336;
+    }
+
+    /* CTA Section Styles */
+    .cta {
+      margin: 100px auto;
+      width: 80%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/banner2.jpg);
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px;
+      text-align: center;
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cta h1 {
+      color: #fff;
+      padding: 0;
+    }
+
+    .cta h1 {
+      margin-bottom: 20px;
+    }
+
+    /* Footer Styles */
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .footer h4 {
+      margin-bottom: 25px;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="images/generate a logo for (2).jpg" alt="Continental University Logo" width="50">
+      <h1>Continental University</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Course</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Your future starts here</h2>
+    <p>Experience the college life you've always dreamed of</p>
+    <a href="#" class="cta1">Visit Us To Know More</a>
+  </section>
+
+  <section class="course">
+    <h1>Courses We offer</h1>
+    <p>All are Government Approved</p>
+    <div class="row">
+      <div class="course-col">
+        <h3>Intermediate</h3>
+        <p>Computer programming courses: Intermediate programming courses might delve into advanced programming concepts, data structures, and algorithms.</p>
+      </div>
+      <div class="course-col">
+        <h3>Degree</h3>
+        <p>Bachelor of Engineering (B.E.) or Bachelor of Technology (B.Tech.) Typically a 4-year program that covers the fundamentals of engineering.</p>
+      </div>
+      <div class="course-col">
+        <h3>Post-Graduation</h3>
+        <p>Master of Engineering (M.E.) or Master of Technology (M.Tech.) Usually a 2-year program that delves deeper into a specific engineering field. Specializations can be similar to undergraduate degrees or focus on more advanced topics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="campus">
+    <h1>Our Global Campus</h1>
+    <p>The campus where you belong</p>
+    <div class="row">
+      <div class="campus-col">
+        <img src="images/london.png">
+        <div class="layer">
+          <h3>London</h3>
+        </div>
+      </div>
+      <div class="campus-col">
+        <img src="images/newyork.png">
+        <div class="layer">
+          <h3>New York</h3>
+        </div>
+      </div>
+      <div class="campus-col">
+        <img src="images/washington.png">
+        <div class="layer">
+          <h3>Washington</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>Building the future, one facility at a time. Engineering excellence in every structure. Your campus, our expertise</p>
+    <div class="row">
+      <div class="facilities-col">
+        <img src="images/library.png">
+        <h3>World Class Library</h3>
+        <p>A heaven for knowledge seekers. Your gateway to the world of books. Discover endless possibilities.</p>
+      </div>
+      <div class="facilities-col">
+        <img src="images/basketball.png">
+        <h3>Large Play Ground</h3>
+        <p>Expansive green fields. Perfect for sports and recreation. A peaceful retreat from the city.</p>
+      </div>
+      <div class="facilities-col">
+        <img src="images/cafeteria.png">
+        <h3>Tasty and Healthy Food</h3>
+        <p>Fuel your day. Grab a bite. Delicious food, great company.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h1>What Our Student's Say</h1>
+    <p>Our student's success stories</p>
+    <div class="row">
+      <div class="testimonials-col">
+        <img src="images/user1.jpg">
+        <div>
+          <p>I chose Continental University because of its strong reputation in engineering and its beautiful campus. The professors are knowledgeable and approachable, and the classes are challenging but rewarding. I've made great friends and have had many opportunities to get involved in extracurricular activities. I'm confident that my education at Continental University will prepare me for a successful career in engineering</p>
+          <h3>Chandramukhi R</h3>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="testimonials-col">
+        <img src="images/user2.jpg">
+        <div>
+          <p>I chose Continental University because of its strong reputation in engineering and its beautiful campus. The professors are knowledgeable and approachable, and the classes are challenging but rewarding. I've made great friends and have had many opportunities to get involved in extracurricular activities. I'm confident that my education at Continental University will prepare me for a successful career in engineering</p>
+          <h3>Satya Nadella</h3>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h1>Ready to join us?</h1>
+    <a href="#" class="hero-btn">Visit Us To Know More</a>
+  </section>
+
+  <footer class="footer">
+    <h4>Follow us on social media</h4>
+    <div class="social">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+    </div>
+    <p>&copy; 2022 Continental University. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
